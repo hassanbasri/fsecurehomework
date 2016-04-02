@@ -1,0 +1,13 @@
+body {
+  padding: 10px;
+  background: gray;
+
+}
+
+#map_canvas{
+  height: 450px;
+}
+
+a {
+  color: #00B7FF;
+}

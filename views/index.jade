@@ -1,0 +1,49 @@
+extends layout
+
+block content
+  #app(ng-app="App")
+    #container.col(ng-controller="ProcessorController")
+      h1 #{title}
+      .alert.alert-info(ng-if='!completed') Processing file ....
+      .alert.alert-success(ng-if='completed') Processing completed!!
+
+      .row
+
+
+        .col-lg-12.col-md-12.col-sm-12.col-xs-12
+            .panel.panel-default
+              .panel-body
+                b  Total Events :
+                {{eventCount}}
+        .col-lg-12.col-md-12.col-sm-12.col-xs-12
+              .panel.panel-default
+                  .panel-body
+                    #map_canvas
+
+        .col-lg-12.col-md-12.col-sm-12.col-xs-12
+              .panel.panel-default
+                  .panel-body
+                    #div_event_per_types
+
+        .col-lg-6.col-md-6.col-sm-12.col-xs-12
+          .panel.panel-default
+            .panel-body
+                #div_event_counts_per_product
+
+        .col-lg-6.col-md-6.col-sm-12.col-xs-12
+            .panel.panel-default
+                .panel-body
+                  #div_event_counts_per_type
+        .col-lg-12.col-md-12.col-sm-12.col-xs-12
+            .panel.panel-default
+                .panel-body
+                   #div_crash_count_per_model
+        .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                .panel.panel-default
+                   .panel-body
+                      #crash_date
+        .col-lg-12.col-md-12.col-sm-12.col-xs-12
+            .panel.panel-default
+                .panel-body
+                  #div_event_per_day_of_week
+                  #div_event_per_hour_of_day

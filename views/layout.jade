@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title= title
+
+    //vendor libraries and files
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+    script(rel='javascript', src='https://code.jquery.com/jquery-1.12.2.min.js')
+    script(rel='javascript', src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
+    script(rel='javascript', src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js')
+    script(rel='javascript', src='https://maps.googleapis.com/maps/api/js')
+    script(rel='javascript', src='https://googlemaps.github.io/js-marker-clusterer/src/markerclusterer.js')
+
+
+
+    //custom files
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(rel='javascript', src='/javascripts/ChartNew.js')
+    script(rel='javascript', src='/javascripts/app.js')
+
+
+    body
+      block content
