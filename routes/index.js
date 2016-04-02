@@ -40,6 +40,8 @@ var data={
 
 var product_devices={};
 
+var unique_events={};
+
 var lineReader = require('readline').createInterface({
   input: fs.createReadStream('data')
 });
@@ -56,7 +58,14 @@ lineReader.on('line', function (line) {
 
   var event=JSON.parse(line);
 
+    // unique events
+    if(unique_events[event.event_id] == undefined){
+      unique_events[event.event_id]=1;
+    }else {
+      unique_events[event.event_id]+=1;
+    }
 
+    
 
     //console.log(new Date(event.time.create_timestamp), new Date(event.timestamp));
 
@@ -228,7 +237,16 @@ lineReader.on('line', function (line) {
 
 lineReader.on('close',function() {
   console.log("********DONE********");
+  var dupEventsCounter=0;
+// duplicate events counter
+for (var event_id in unique_events) {
+  if (unique_events[event_id]>1) {
+    dupEventsCounter++;
 
+  }
+}
+
+console.log("Duplicate events",dupEventsCounter);
 
 // device activity process the datastructure and sort the devices based on the diff
 deviceActivityTemp=[];
